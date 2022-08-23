@@ -19,17 +19,14 @@ These default presets will make it easier to:
 Edit: `sudo vim .bash_profile` or `sudo vim .bashrc`
    
 ```bash
-# .bash_profile example:
+# .bashrc example:
 
 
-# If .bash_aliases exists, load into .bash_profile
+# If .bash_aliases exists, load into .bashrc
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-# If .bashrc exists, load into .bash_profile
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-fi
+
 
 # Set Vim as default editor
 export VISUAL=vim
@@ -44,6 +41,8 @@ alias la='ls -A'
 alias cl='clear'
 alias kip='sudo kill -9 $(sudo lsof -t -i:3000)' # Kill process running on port 3000
 alias edit='cd; sudo vim /path/to/file' # Edit a commonly visited file. Ideal for NGINX .conf
+alias hyp='cd; cd code/sandbox; code . hyp.js' # Launch a sandbox to test code hypotheses
+alias run='cd; cd code/sandbox; node hyp.js' # Run those hypotheses
 
 # Niche~
 alias rpsql='postgres -u root' # Run psql 
@@ -55,8 +54,6 @@ alias coins='cd; node .coins.js' # Store/Log API Keys
 # PC Only
 alias c='code .' # Launch current directory in VS Code
 alias pi='cd; ssh pi@XXX.XXX.X.XXX' # SSH into raspberry pi
-alias hyp='cd; cd code/sandbox; code . hyp.js' # Launch a sandbox to test code hypotheses
-alias run='cd; cd code/sandbox; node hyp.js' # Run those hypotheses
 alias hypr='cd; cd code/sandbox/react; code . App.js' # Launch a react app sandbox
 ```
 
@@ -118,7 +115,7 @@ npm install pm2@latest -g
 npm install -g typescript
 
 # ESLint:
-#  
+#  https://eslint.org/docs/latest/user-guide/getting-started
 npm install -g eslint
 ```
 
@@ -127,11 +124,14 @@ npm install -g eslint
 `sudo vim .gitconfig`
 
 ```bash
-git config --global user.name "John Doe"
-git config --global user.email "johndoe@example.com"
-git config --global core.editor "vim" # Set Vim as default editor.
-git config --global core.autocrlf input # Setup: Line Ending Preferences
-git config --global core.safecrlf true
+# Fillout Your Own Name/Email
+[user]
+  name = John Doe
+  emial = johndoe@example.com
+[core]
+  editor = vim
+  autocrlf = input
+  safecrlf = true
 [alias] 
   co = checkout
   ci = commit
