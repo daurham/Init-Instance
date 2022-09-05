@@ -83,7 +83,7 @@ nvm alias default 18
 
 # netstat: 
 #  https://www.tecmint.com/install-netstat-in-linux/
-apt install net-tools
+sudo apt install net-tools
 
 # nginx: 
 #  https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
