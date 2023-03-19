@@ -63,6 +63,9 @@ alias hypr='cd; cd code/sandbox/react; code . App.js' # Launch a react app sandb
 # Before Installing Run:
 sudo apt-get update && sudo apt-get upgrade -y
 
+# curl
+sudo apt install curl
+
 # node:
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash
 sudo apt-get install -y nodejs
@@ -125,9 +128,11 @@ npm install -g eslint
 
 ```bash
 # Fillout Your Own Name/Email
+[credential]
+  helper = store
 [user]
   name = John Doe
-  emial = johndoe@example.com
+  email = johndoe@example.com
 [core]
   editor = vim
   autocrlf = input
